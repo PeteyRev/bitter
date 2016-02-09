@@ -23,4 +23,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+    
+            //Get the likes of the user
+    public function likes()
+    {
+        return $this->hasMany('App\likes');
+    }
+    
+            //Get the posts of the user
+    public function posts()
+    {
+        return $this->hasMany('App\posts');
+    }
 }
